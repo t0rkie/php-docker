@@ -6,7 +6,7 @@ services:
     ports:
       - 8000:80 #host:container
     volumes:
-      - ./src/public:/var/www/public
+      - ./src/:/var/www/
       - ./docker/nginx:/etc/nginx/conf.d
     depends_on:
       - app
@@ -20,7 +20,7 @@ services:
       MYSQL_USER: ${MYSQL_USER}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     volumes:
-      - ./src/public:/var/www/public
+      - ./src/:/var/www/
     depends_on:
       - mysql
   mysql:
