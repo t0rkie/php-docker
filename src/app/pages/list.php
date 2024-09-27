@@ -9,7 +9,8 @@ render_sidebar();
 
 
 <main style="margin-left:300px;">
-  LIST
+  list
+
 
 </main>
 
