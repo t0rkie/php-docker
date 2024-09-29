@@ -1,3 +1,13 @@
+<?php
+function current_page($page_name) {
+  $current_page = $_GET['page'] ?? 'home';
+  // セキュリティ対策：ページ名に不正な文字が含まれないか確認
+  $current_page = htmlspecialchars($current_page, ENT_QUOTES, 'UTF-8');
+  
+  return strpos($current_page, $page_name) !== false ? 'active' : '';
+}
+?>
+
 <aside class="sidebar">
   <div class="sidebar-header">
     <img src="images/logo.png" alt="logo" />
@@ -9,12 +19,12 @@
       <div class="menu-separator"></div>
     </h4>
     <li>
-      <a href="/timer">
+      <a href="/timer" class="<?= current_page('timer'); ?>">
         タイマー
       </a>
     </li>
     <li>
-      <a href="/list">
+      <a href="/list" class="<?= current_page('list'); ?>">
         一覧
       </a>
     </li>
@@ -85,10 +95,16 @@
   text-decoration: none;
   transition: 0.2s ease;
 }
-.sidebar-links li a:hover {
+/* .sidebar-links li a:hover {
+  color: #161a2d;
+  background: #fff;
+  border-radius: 4px;
+} */
+.sidebar-links li .active {
   color: #161a2d;
   background: #fff;
   border-radius: 4px;
 }
+
 
 </style>
