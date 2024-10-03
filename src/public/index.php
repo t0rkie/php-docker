@@ -1,4 +1,8 @@
 <?php
+$request = $_SERVER['REQUEST_URI'];
+echo "#####################################".$request;
+
+
 $page = $_GET['page'] ?? 'home';
 // セキュリティ対策：ページ名に不正な文字が含まれないか確認
 $page = htmlspecialchars($page, ENT_QUOTES, 'UTF-8');
