@@ -12,7 +12,7 @@ function renderProgressBar($percentage) {
 /* プログレスバーのスタイル */
 .progress-container {
   width: 100%;
-  background-color: #f0f0f0;
+  background-color: #DDDDDD;
   border-radius: 5px;
   overflow: hidden;
   height: 10px;
