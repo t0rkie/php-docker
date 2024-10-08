@@ -79,11 +79,26 @@ $products = [
     </div>
   </div>
   <!-- オーバーレイとポップアップ -->
-  <div class="overlay hidden" id="overlay"></div>
+  <div class="overlay hidden" id="overlay" onclick="closePopup()"></div>
   <div class="popup hidden" id="popup">
-    <h2>勉強をスタートします</h2>
-    <p>がんばりましょう！<p>
-    <p id="countdown" class="countdown">3</p>
+    <form action="index.php?action=regist_subject" method="POST">
+      <div>
+        <h1>科目登録</h1>
+      </div>
+      <div>
+        <label for="subject_name">資格名</label>
+        <input name="subject_name" id="subject_name" type="text">
+      </div>
+      <div>
+        <label for="examine_day">試験日</label>
+        <input name="examine_day" id="examine_day" type="date">
+      </div>
+      <div>
+        <label for="goalStudyTime">目標学習時間</label>
+        <input name="goalStudyTime" id="goalStudyTime" type="number">
+      </div>
+      <input type="submit" value="登録する">
+    </form>
   </div>
 </main>
 <style>
@@ -115,20 +130,17 @@ $products = [
   /* ポップアップのスタイル */
   .popup {
     position: fixed;
-    top: 20%;
+    top: 10%;
     left: 50%;
     transform: translateX(-50%);
-    width: 800px;
-    height: 300px;
-    padding: 20px;
+    width: 600px;
+    height: 600px;
+    padding: 50px 80px;
     background-color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    /* text-align: center; */
     border-radius: 10px;
     z-index: 1000;
-  }
-  .countdown {
-    font-size: 70px;
   }
 
   /* 背景のオーバーレイ */
@@ -146,6 +158,27 @@ $products = [
   .hidden {
     display: none;
   }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  form div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  input {
+    font-family: inherit;
+    font-size: inherit;
+    border-radius: .25rem;
+    border: 1px solid #707070;
+    outline: none;
+    padding: 0.375em 0.75em;
+    }
+
 </style>
 <script src="assets/js/popup.js"></script>
 
