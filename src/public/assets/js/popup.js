@@ -10,7 +10,6 @@ function showPopup() {
 
 // ポップアップを閉じる関数
 function closePopup() {
-  clearInterval(countdownInterval) // カウントダウンを止める
   document.getElementById('popup').classList.add('hidden')
   document.getElementById('overlay').classList.add('hidden')
 }
