@@ -95,8 +95,8 @@ render_sidebar();
   .popup {
     position: fixed;
     top: 20%;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 60%;
+    transform: translateX(-60%);
     width: 800px;
     height: 300px;
     padding: 20px;
