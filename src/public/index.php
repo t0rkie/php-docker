@@ -1,12 +1,27 @@
 <?php
+require_once '../db/Database.php';
+require_once '../app/controllers/AuthController.php';
 require_once '../app/controllers/SubjectController.php';
+
+$db = new Database();
+$pdo = $db->getConnection();
+
+$authController = new AuthController($pdo);
 $subjectController = new SubjectController();
+
 // ルーティング
 $action = filter_input(INPUT_GET, 'action') ?? null;
-if ($action === 'regist_subject') {
-  $subjectController->addSubject();
+switch ($action) {
+  case 'signup':
+    $authController->register();
+    break;
+  case 'login':
+    $authController->login();
+    break;
+  case 'regist_subject':
+    $subjectController->addSubject();
+    break;
 }
-
 
 
 $page = $_GET['page'] ?? 'home';

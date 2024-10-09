@@ -28,30 +28,6 @@ $products = [
     'days_left_percentage' => 60,
     'progress_percentage' => 80,
   ],
-  [
-    'subject' => '宅建',
-    'days_left' => 55,
-    'days_left_percentage' => 60,
-    'progress_percentage' => 80,
-  ],
-  [
-    'subject' => '宅建',
-    'days_left' => 55,
-    'days_left_percentage' => 60,
-    'progress_percentage' => 80,
-  ],
-  [
-    'subject' => '宅建',
-    'days_left' => 55,
-    'days_left_percentage' => 60,
-    'progress_percentage' => 80,
-  ],
-  [
-    'subject' => '宅建',
-    'days_left' => 55,
-    'days_left_percentage' => 60,
-    'progress_percentage' => 80,
-  ],
 ];
 ?>
 
