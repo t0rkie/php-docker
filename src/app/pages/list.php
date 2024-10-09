@@ -2,7 +2,7 @@
 include __DIR__ . '/../helpers/functions.php';
 include __DIR__ . '/../components/card.php';
 
-$title="HOME";
+$title="List";
 render_header($title);
 render_sidebar();
 ?>
@@ -132,7 +132,8 @@ $products = [
     position: fixed;
     top: 10%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) scale(0.8);
+    -webkit-transform: translateX(-50%) scale(0.8);
     width: 600px;
     height: 600px;
     padding: 50px 80px;
@@ -141,6 +142,9 @@ $products = [
     /* text-align: center; */
     border-radius: 10px;
     z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    -webkit-transition: opacity 0.3s ease, -webkit-transform 0.3s ease;
   }
 
   /* 背景のオーバーレイ */
@@ -152,6 +156,19 @@ $products = [
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 999;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    -webkit-transition: opacity 0.3s ease;
+  }
+
+  /* 表示時のスタイル */
+  .popup.show {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+    -webkit-transition: translateX(-50%) scale(1);
+  }
+  .overlay.show {
+    opacity: 1;
   }
 
   /* 非表示のスタイル */
@@ -177,7 +194,7 @@ $products = [
     border: 1px solid #707070;
     outline: none;
     padding: 0.375em 0.75em;
-    }
+  }
 
 </style>
 <script src="assets/js/popup.js"></script>
