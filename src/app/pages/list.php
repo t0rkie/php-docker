@@ -28,30 +28,6 @@ $products = [
     'days_left_percentage' => 60,
     'progress_percentage' => 80,
   ],
-  [
-    'subject' => '宅建',
-    'days_left' => 55,
-    'days_left_percentage' => 60,
-    'progress_percentage' => 80,
-  ],
-  [
-    'subject' => '宅建',
-    'days_left' => 55,
-    'days_left_percentage' => 60,
-    'progress_percentage' => 80,
-  ],
-  [
-    'subject' => '宅建',
-    'days_left' => 55,
-    'days_left_percentage' => 60,
-    'progress_percentage' => 80,
-  ],
-  [
-    'subject' => '宅建',
-    'days_left' => 55,
-    'days_left_percentage' => 60,
-    'progress_percentage' => 80,
-  ],
 ];
 ?>
 
@@ -87,17 +63,17 @@ $products = [
       </div>
       <div>
         <label for="subject_name">資格名</label>
-        <input name="subject_name" id="subject_name" type="text">
+        <input name="subject_name" id="subject_name" type="text" placeholder="FP3級">
       </div>
       <div>
         <label for="examine_day">試験日</label>
         <input name="examine_day" id="examine_day" type="date">
       </div>
       <div>
-        <label for="goalStudyTime">目標学習時間</label>
-        <input name="goalStudyTime" id="goalStudyTime" type="number">
+        <label for="goalStudyTime">目標学習時間(h)</label>
+        <input name="goalStudyTime" id="goalStudyTime" type="number" placeholder="300">
       </div>
-      <input type="submit" value="登録する">
+      <input class="btn-submit" type="submit" value="登録する">
     </form>
   </div>
 </main>
@@ -194,6 +170,12 @@ $products = [
     border: 1px solid #707070;
     outline: none;
     padding: 0.375em 0.75em;
+  }
+
+  .btn-submit {
+    background: #1A4472;
+    color: #FFF;
+    margin-top: 40px;
   }
 
 </style>

@@ -1,3 +1,24 @@
+<?php
+require_once '../db/Database.php';
+require_once '../app/controllers/AuthController.php';
+
+// session_start();
+
+$db = new Database();
+$pdo = $db->getConnection();
+
+$auth = new AuthController($pdo);
+
+$currentPage = $_SERVER['REQUEST_URI'];
+
+if (!$auth->isLoggedIn()) {
+  if (!str_contains($currentPage, 'login') && !str_contains($currentPage, 'signup')) {
+    header('Location: /login');
+    exit();
+  }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
