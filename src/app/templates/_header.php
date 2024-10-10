@@ -2,8 +2,6 @@
 require_once '../db/Database.php';
 require_once '../app/controllers/AuthController.php';
 
-// session_start();
-
 $db = new Database();
 $pdo = $db->getConnection();
 

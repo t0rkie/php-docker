@@ -6,6 +6,8 @@ function current_page($page_name) {
   
   return strpos($current_page, $page_name) !== false ? 'active' : '';
 }
+
+$username = $_SESSION['username'];
 ?>
 
 <aside class="sidebar">
@@ -29,6 +31,10 @@ function current_page($page_name) {
       </a>
     </li>
   </ul>
+
+  <div>
+    <?php echo htmlspecialchars($username, ENT_QUOTES, 'UTF-8'); ?>
+  </div>
 </aside>
 
 <style>
